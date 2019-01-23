@@ -234,7 +234,7 @@ module.exports = "<table border=\"1\">\r\n    \r\n        <tr>\r\n              
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<table border=\"1\" style=\"padding:10px;margin: 10px\">\r\n\r\n    <tr>\r\n        <td>Index</td>\r\n        <td>IsFirst</td>\r\n        <td>IsLast</td>\r\n        <td>IsEven</td>\r\n        <td>IsOdd</td>\r\n        <td>Code</td>\r\n        <td>Name</td>\r\n        <td>Gender</td>\r\n        <td>DOB</td>\r\n    </tr>\r\n\r\n    <tr *ngFor=\" let employee of myemployeelist;trackBy:trackByEmp;let isodd = odd;let iseven = even;let myindex=index;let Islast= last;let Isfirst=first\">\r\n        <td>{{myindex}}</td>\r\n        <td>{{Isfirst}}</td>\r\n        <td>{{Islast}}</td>\r\n        <td>{{iseven}}</td>\r\n        <td>{{isodd}}</td>\r\n        <td>{{employee.code}}</td>\r\n        <td>{{employee.name}}</td>\r\n        <td>{{employee.gender}}</td>\r\n        <td>{{employee.dob}}</td>\r\n    </tr>\r\n    <tr *ngIf=\"!myemployeelist\">\r\n\r\n        <td *ngIf=\"!myemployeelist \" colspan=\"4\">No Record Found</td>\r\n    </tr>\r\n    <tr>\r\n\r\n        <td colspan=\"4\"> <button (click)=\"getemployeelist()\">Click here for More......</button>\r\n        </td>\r\n    </tr>\r\n</table>"
+module.exports = "<table border=\"1\" style=\"padding:10px;margin: 10px\">\r\n\r\n    <tr>\r\n        <td>Index</td>\r\n        <td>IsFirst</td>\r\n        <td>IsLast</td>\r\n        <td>IsEven</td>\r\n        <td>IsOdd</td>\r\n        <td>Code</td>\r\n        <td>Name</td>\r\n        <td>Gender</td>\r\n        <td>DOB</td>\r\n    </tr>\r\n\r\n    <tr *ngFor=\" let employee of myemployeelist;trackBy:trackByEmp;let isodd = odd;let iseven = even;let myindex=index;let Islast= last;let Isfirst=first\">\r\n        <td>{{myindex}}</td>\r\n        <td>{{Isfirst}}</td>\r\n        <td>{{Islast}}</td>\r\n        <td>{{iseven}}</td>\r\n        <td>{{isodd}}</td>\r\n        <td>{{employee.code | uppercase}}</td>\r\n        <td>{{employee.name | lowercase}}</td>\r\n        <td>{{employee.gender}}</td>\r\n        <td>{{employee.dob | date:\"short\" }}</td>\r\n    </tr>\r\n    <tr *ngIf=\"!myemployeelist\">\r\n\r\n        <td *ngIf=\"!myemployeelist \" colspan=\"4\">No Record Found</td>\r\n    </tr>\r\n    <tr>\r\n\r\n        <td colspan=\"4\"> <button (click)=\"getemployeelist()\">Click here for More......</button>\r\n        </td>\r\n    </tr>\r\n</table>"
 
 /***/ }),
 
@@ -258,7 +258,7 @@ var EmployeelistComponent = /** @class */ (function () {
         this.myemployeelist = [
             { code: 'emp101', name: 'Lovely', gender: 'Male', dob: '12-03-1993' },
             { code: 'emp102', name: 'Laddi', gender: 'Feamle', dob: '11-10-1990' },
-            { code: 'emp103', name: 'Happy', gender: 'Male', dob: '17-06-1997' },
+            { code: 'emp103', name: 'Happy', gender: 'Male', dob: '2-06-1997' },
             { code: 'emp104', name: 'Gapu', gender: 'Male', dob: '06-03-1993' },
             { code: 'emp105', name: 'Priti', gender: 'Female', dob: '12-03-1989' },
         ];
@@ -267,7 +267,7 @@ var EmployeelistComponent = /** @class */ (function () {
         this.myemployeelist = [
             { code: 'emp101', name: 'Lovely', gender: 'Male', dob: '12-03-1993' },
             { code: 'emp102', name: 'Laddi', gender: 'Feamle', dob: '11-10-1990' },
-            { code: 'emp103', name: 'Happy', gender: 'Male', dob: '17-06-1997' },
+            { code: 'emp103', name: 'Happy', gender: 'Male', dob: '11-10-1990' },
             { code: 'emp104', name: 'Gapu', gender: 'Male', dob: '06-03-1993' },
             { code: 'emp105', name: 'Priti', gender: 'Female', dob: '12-03-1989' },
             { code: 'emp106', name: 'pakista', gender: 'male', dob: '12-06-1989' },
